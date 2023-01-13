@@ -1,13 +1,36 @@
 // API
-const API_ENDPOINT = 'https://yesno.wtf/api';
+const API_ENDPOINT = '';
+let btn
 
-/**
- * STEPS:
- *
- * 1. Create a fetchAnswer function and call the API
- * 2. Output the API's response
- * 3. Attach fetchAnswer to an event listener
- * 4. Clear output after 3 seconds
- * 5. Optional: add loading/error states
- *
- */
+function getData() {
+    let promesa = fetch("https://yesno.wtf/api",{
+method:"GET"
+
+    });
+    promesa.then( (response)=>{
+    response.json().then( (data) => {
+        createCards(data);
+    }//data
+
+    )//then json
+.catch( (error)=>{
+    console.error("error en el formato de respuesta "+ error.message);
+});//catch
+
+
+
+    }//response
+    )//then
+.catch( (error) =>{
+    console.error("Error en la solicitud"+error.message);
+}
+
+);//cantch
+
+}//getData 
+
+
+Element.addEventListener("summit",function() {
+
+
+});
